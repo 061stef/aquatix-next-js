@@ -1,0 +1,7 @@
+.containerlayout{ width: 100%; max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; padding: 20px 0px; align-items: center; }
+.containerlayout img{ height: 40px;}
+.containerMenu{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-column-gap: 20px;}
+.containerMenu p{ text-align: center; color: #123888;}
+.containerFooter{ max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; }
+.containerFooter img{ width: 100px; margin-bottom: 20px;} 
+.containerFooter p{ color:  #f1f1f1; font-family: 'Lato'; margin: 0px;}

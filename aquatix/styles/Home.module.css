@@ -1,0 +1,5 @@
+.containerGareNews{ max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr 1fr; grid-column-gap: 30px; margin-top: 30px; margin-bottom: 30px;}
+.lateralContent{ display: grid;  grid-template-columns: 1fr; grid-row-gap: 30px;}
+.centerBoxNews{ background-color: #123888; height: 580px; padding: 30px;}
+.boxNews{ background-color: #123888; }
+.ultimegareTitle{ text-align: center; border: 1px solid white; background-color: white; border-radius: 30px; min-width:272px; font-size: 30px; color: #123888; }
