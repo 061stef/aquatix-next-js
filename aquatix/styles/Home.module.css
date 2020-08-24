@@ -5,3 +5,7 @@
 .ultimegareTitle{ text-align: center; border: 1px solid white; background-color: white; border-radius: 30px; min-width:272px; font-size: 30px; color: #123888; }
 .listAllRace{ list-style: none; padding-left: 0px; }
 .listAllRace li{ text-align: center; background-color: #fff; margin-bottom: 10px; border-radius: 20px; padding: 5px; color: #123888;}
+.boxAppAquatix{ background-color: #123888; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 40px 0px; margin-bottom: 30px;}
+.boxAppTitle{ color: #fff; font-size: 30px; margin: 0px; margin-bottom: 30px;}
+.storeAppContainer{ display: flex; justify-content: space-between; max-width: 724px; width: 100%; }
+.storeAppContainer img{ width: 200px; }

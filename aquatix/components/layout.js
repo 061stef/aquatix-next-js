@@ -29,9 +29,9 @@ export default function Layout({ children }) {
         <div className={styles.containerlayout}>
           <img src="https://aquatix.it/wp-content/uploads/2019/11/AquatiX-Pos.png"></img>
           <div className={styles.containerMenu}>
-            <p>HOME</p>
-            <p>ATLETI</p>
-            <p>GARE</p>
+           <Link href="/"><a><p>HOME</p></a></Link>
+           <Link href="/atleti"><a><p>ATLETI</p></a></Link>
+           <Link href="/gare"><a><p>GARE</p></a></Link>
             <p>PISCINE</p>
           </div>
         </div>
@@ -45,7 +45,6 @@ export default function Layout({ children }) {
             C.ne Clodia n° 100 - 00195 Roma - P.IVA: 09204291000
             </p>
         </div>
-
       </footer>
     </div>
   )

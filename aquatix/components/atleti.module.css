@@ -1,0 +1,6 @@
+.titlepage{ color: #123888; font-size: 30px; margin: 30px auto; text-align: center; }
+.inputSearch{ border: 1px solid #123888; border-radius: 30px; width: 100%; max-width: 500px; margin: 30px auto 50px; padding: 10px 5px; display: flex;}
+.containerAtleti{ width: 100%; max-width: 1080px; margin: 30px auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-column-gap: 30px; grid-row-gap: 30px;}
+.boxAtleta{ display: flex; flex-direction: column; cursor: pointer;}
+.boxAtleta img{ width: 100%;}
+.boxNomeAtleta{ background-color: #123888; text-align: center; color: #fff; padding: 10px; }
