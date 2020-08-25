@@ -24,11 +24,10 @@ class Atleti extends React.Component {
             showing: true
         })
     }
-    async findAthlete(fin){
-        const athlete = await fetch('https://aquatix.it/wp-json/api/v2/nuotatori/single?fincode='+fin);
+    async findAthlete(fin) {
+        const athlete = await fetch('https://aquatix.it/wp-json/api/v2/nuotatori/single?fincode=' + fin);
         const single = await athlete.json()
         console.log("single", single);
-        console.log("porco dio")
     }
 
     render() {
