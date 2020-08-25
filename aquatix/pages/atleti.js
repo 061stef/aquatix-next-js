@@ -7,7 +7,7 @@ export const getServerSideProps = async (ctx) => {
     const res = await fetch('https://aquatix.it/wp-json/api/v2/nuotatori');
     const data = await res.json();
     return {
-        props: { data }
+        props: { data : data }
     }
 }
 class Atleti extends React.Component {
