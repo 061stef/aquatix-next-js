@@ -21,7 +21,7 @@ class Gare extends React.Component {
             <Layout>
                 <Head></Head>
                 <h2 className={gareStyles.titlepage}>GARE</h2>
-                <div className={atletiStyle.containerGare}>
+                <div className={gareStyles.containerGare}>
 
                 </div>
             </Layout>

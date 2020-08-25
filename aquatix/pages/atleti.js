@@ -28,6 +28,7 @@ class Atleti extends React.Component {
         const athlete = await fetch('https://aquatix.it/wp-json/api/v2/nuotatori/single?fincode='+fin);
         const single = await athlete.json()
         console.log("single", single);
+        console.log("porco dio")
     }
 
     render() {
@@ -40,9 +41,9 @@ class Atleti extends React.Component {
                 <Head></Head>
                 <h2 className={atletiStyle.titlepage}>ATLETI</h2>
                 <input value={this.state.input} type="text" onChange={this.onChangeHadler.bind(this)} className={atletiStyle.inputSearch} placeholder="Cerca nuotatore" />
-                <div className={atletiStyle.containerAtleti}>
+                <div className={atletiStyle.containerAtleti}  >
                     {tuttigliAtleti.map(atleta => (
-                        <div className={atletiStyle.boxAtleta} data-fincode={atleta.fincode} onClick={this.findAthlete.bind(this, atleta.fincode)}>
+                        <div className={atletiStyle.boxAtleta} data-fincode={atleta.fincode} onClick={this.findAthlete.bind(this, atleta.fincode)} >
                             <img src={atleta.image}></img>
                             <div className={atletiStyle.boxNomeAtleta}>{atleta.first_name} {atleta.last_name}</div>
                         </div>
