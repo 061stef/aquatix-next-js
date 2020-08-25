@@ -2,4 +2,5 @@
 .containerGare{ width: 100%; max-width: 1080px; margin: 30px auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-column-gap: 30px; grid-row-gap: 30px; }
 .bannerGara{ background-color: #123888; text-align: center; padding: 4px; border-radius: 30px; color: #fff; }
 .boxGara p{ color: #123888; text-align: center; padding: 4px; }
-.inputDate{ border-radius: 30px; width: 50%; padding: 5px 5px; margin: 50px auto; border-color: #123888; display: flex; }
+.inputDate{ border-radius: 30px; width: 50%; padding: 5px 5px; margin: 50px auto 30px; border-color: #123888; display: flex; }
+.clearDataButton{ color: #fff; background-color: #123888; text-align: center; padding: 8px; width: 100%; max-width: 200px; border-radius: 30px; margin: 0 auto 20px; }

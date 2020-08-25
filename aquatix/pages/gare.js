@@ -47,13 +47,12 @@ class Gare extends React.Component {
                 <Head></Head>
                 <h2 className={gareStyles.titlepage}>GARE</h2>
                 <input type="date" className={gareStyles.inputDate} onChange={this.onChangeDate.bind(this)}></input>
-                <div onClick={this.clearData.bind(this)}>Clear data</div>
+                <div onClick={this.clearData.bind(this)} className={gareStyles.clearDataButton}>Reset data</div>
                 <div className={gareStyles.containerGare}>
                     {gare.map(gara => (
                         <div className={gareStyles.boxGara}>
                             <div className={gareStyles.bannerGara}>{gara.place}</div>
                             <p>{gara.title}</p>
-                            <p>{gara.dates}</p>
                         </div>
                     ))}
                 </div>
