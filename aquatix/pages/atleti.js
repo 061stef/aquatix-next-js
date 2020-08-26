@@ -62,11 +62,11 @@ class Atleti extends React.Component {
                     return <p class="panel" style={{ display: "none" }}>{risultati.battery} {risultati.time}</p>
                 })
                 this.setState({
-                    html: <> <p>{name}</p>
-                        <img src={profileimg}></img>
+                    html: <> <p className={atletiStyle.nomeAthlete}>{name}</p>
+                        <img src={profileimg} className={atletiStyle.imgProfile}></img>
                         <p>{team}</p>
                         <p>{year}</p>
-                        <div onClick={this.toggleAccordion.bind(this)}>Tutti i record</div>
+                        <div onClick={this.toggleAccordion.bind(this)} className={atletiStyle.accordion}>Tutti i record</div>
                         {record} </>,
                         showLoader: false
                 })
