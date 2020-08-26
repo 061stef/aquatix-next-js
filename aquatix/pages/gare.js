@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '../components/layout';
 import Head from 'next/head';
 import gareStyles from '../components/gare.module.css'
+import axios from 'axios';
+
 
 export const getServerSideProps = async (ctx) => {
     const res = await fetch('https://aquatix.it/wp-json/api/v2/gare');
@@ -15,19 +17,43 @@ class Gare extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: null
+            date: null,
+            showmodal: false,
+            fetchUser: ''
         }
     }
 
     onChangeDate(e) {
         console.log(e.target.value)
         this.setState({
-            date: e.target.value+'T00:00:00.000Z'
+            date: e.target.value + 'T00:00:00.000Z'
         })
     }
-    clearData(){
+    clearData() {
         this.setState({
             date: null
+        })
+    }
+
+    openModal(e) {
+        let idGara = e.target.getAttribute('data-id');
+        console.log("id", idGara);
+        console.log(e.target)
+        axios.get('https://aquatix.it/wp-json/api/v2/gara?id='+idGara)
+            .then((response) => {
+                this.setState({
+                    fetchUser: response.data.results
+                });
+                console.log("fetchUser", this.state.fetchUser);
+                this.setState({
+                    showmodal: !this.state.showmodal
+                })
+            })
+       
+    }
+    closeModal(){
+        this.setState({
+            showmodal: !this.state.showmodal
         })
     }
 
@@ -37,11 +63,10 @@ class Gare extends React.Component {
             gare = this.props.data.gare.filter((garasingola) => {
                 return garasingola.dates.includes(this.state.date)
             })
-        }else{
-            gare =  this.props.data.gare;
+        } else {
+            gare = this.props.data.gare;
         }
 
-        console.log("warn", this.props.data)
         return (
             <Layout>
                 <Head></Head>
@@ -50,11 +75,20 @@ class Gare extends React.Component {
                 <div onClick={this.clearData.bind(this)} className={gareStyles.clearDataButton}>Reset data</div>
                 <div className={gareStyles.containerGare}>
                     {gare.map(gara => (
-                        <div className={gareStyles.boxGara}>
-                            <div className={gareStyles.bannerGara}>{gara.place}</div>
-                            <p>{gara.title}</p>
+                        <div className={gareStyles.boxGara} onClick={this.openModal.bind(this)} data-id={gara.id}>
+                            <div className={gareStyles.bannerGara} data-id={gara.id}>{gara.place}</div>
+                            <p data-id={gara.id}>{gara.title}</p>
                         </div>
                     ))}
+                </div>
+                <div id="myModal" className={gareStyles.modal} style={{ display: this.state.showmodal ? 'block' : 'none' }}>
+
+
+                    <div className={gareStyles.modalContent}>
+                        <span className={gareStyles.close} onClick={this.closeModal.bind(this)}>&times;</span>
+                        <p>Some text in the Modal..</p>
+                    </div>
+
                 </div>
             </Layout>
         )
