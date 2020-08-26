@@ -19,7 +19,8 @@ class Gare extends React.Component {
         this.state = {
             date: null,
             showmodal: false,
-            fetchUser: ''
+            fetchUser: '',
+            html: ''
         }
     }
 
@@ -37,21 +38,30 @@ class Gare extends React.Component {
 
     openModal(e) {
         let idGara = e.target.getAttribute('data-id');
-        console.log("id", idGara);
-        console.log(e.target)
-        axios.get('https://aquatix.it/wp-json/api/v2/gara?id='+idGara)
+        axios.get('https://aquatix.it/wp-json/api/v2/gara?id=' + idGara)
             .then((response) => {
                 this.setState({
                     fetchUser: response.data.results
                 });
                 console.log("fetchUser", this.state.fetchUser);
+                const returnedHtml = Object.keys(this.state.fetchUser);
+                const finalHtml = returnedHtml.map(challenge => {
+                    return <p>{challenge}</p>
+                });
+
+
+                console.log(returnedHtml)
                 this.setState({
-                    showmodal: !this.state.showmodal
+                    showmodal: !this.state.showmodal,
+                    html: <>{finalHtml}</>
                 })
             })
-       
+            .catch((error) => {
+                console.log(error);
+            });
+
     }
-    closeModal(){
+    closeModal() {
         this.setState({
             showmodal: !this.state.showmodal
         })
@@ -86,7 +96,7 @@ class Gare extends React.Component {
 
                     <div className={gareStyles.modalContent}>
                         <span className={gareStyles.close} onClick={this.closeModal.bind(this)}>&times;</span>
-                        <p>Some text in the Modal..</p>
+                        {this.state.html}
                     </div>
 
                 </div>
