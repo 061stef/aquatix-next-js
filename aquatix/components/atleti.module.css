@@ -30,7 +30,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  .nomeAthlete{ font-size: 30px; color: #123888; text-transform: uppercase; }
+  .nomeAthlete{ font-size: 30px; color: #123888; text-transform: uppercase; margin-top: 0px; }
   .imgProfile{ border-radius: 185px; }
   .accordion:hover{ cursor: pointer; border: 2px solid #2D9DDC;}
   .accordion{ background-color: #123888; color: #fff; border-radius: 30px; padding: 10px; margin: 0 auto; width: 50%; } 

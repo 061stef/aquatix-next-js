@@ -59,7 +59,7 @@ class Atleti extends React.Component {
                 let year = this.state.fetchUser.year;
                 let results = this.state.fetchUser.data.results;
                 const record = results.map(risultati => {
-                    return <p class="panel" style={{ display: "none" }}>{risultati.battery} {risultati.time}</p>
+                    return <tr><td>{risultati.battery} </td><td>{risultati.time}</td></tr>
                 })
                 this.setState({
                     html: <> <p className={atletiStyle.nomeAthlete}>{name}</p>
@@ -67,7 +67,11 @@ class Atleti extends React.Component {
                         <p>{team}</p>
                         <p>{year}</p>
                         <div onClick={this.toggleAccordion.bind(this)} className={atletiStyle.accordion}>Tutti i record</div>
-                        {record} </>,
+                        <table class="panel" style={{ display: "none" }}>
+                            <tr><th>Battery</th><th>Tempo</th></tr>
+                            {record} 
+                        </table>
+                        </>,
                         showLoader: false
                 })
             })
