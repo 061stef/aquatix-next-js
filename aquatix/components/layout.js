@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from './layout.module.css'
 
-const name = 'Stefano'
 export const siteTitle = 'Aquatix'
 
 export default function Layout({ children }) {
@@ -27,7 +26,7 @@ export default function Layout({ children }) {
       </Head>
       <header className={styles.header}>
         <div className={styles.containerlayout}>
-          <img src="https://aquatix.it/wp-content/uploads/2019/11/AquatiX-Pos.png"></img>
+        <Link href="/"><a><img src="https://aquatix.it/wp-content/uploads/2019/11/AquatiX-Pos.png"></img></a></Link>
           <div className={styles.containerMenu}>
            <Link href="/"><a><p>HOME</p></a></Link>
            <Link href="/atleti"><a><p>ATLETI</p></a></Link>
@@ -39,7 +38,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <footer>
         <div className={styles.containerFooter}>
-          <img src="https://aquatix.it/wp-content/uploads/2019/11/AquatiX-Neg.png"></img>
+        <Link href="/"><a><img src="https://aquatix.it/wp-content/uploads/2019/11/AquatiX-Neg.png"></img></a></Link>
           <p>
             AEMMEX ELECTRONICS SERVICE SRL<br></br>
             C.ne Clodia n° 100 - 00195 Roma - P.IVA: 09204291000

@@ -33,7 +33,7 @@ class Home extends Component {
             <div className={styleHome.ultimegareTitle}>ULTIME GARE</div>
             <ul className={styleHome.listAllRace}>
               {tuttegare.map(item => (
-                <a><li>{item.title}</li></a>
+                <li>{item.title}</li>
               ))}
             </ul>
           </div>
