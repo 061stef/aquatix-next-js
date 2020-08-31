@@ -13,7 +13,7 @@ export const getServerSideProps = async (ctx) => {
     }
 }
 
-class Gare extends React.Component {
+export default class Gare extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -105,4 +105,4 @@ class Gare extends React.Component {
     }
 }
 
-export default Gare;
+ 
