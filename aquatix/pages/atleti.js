@@ -30,17 +30,17 @@ class Atleti extends React.Component {
             showing: true
         })
     }
-    toggleAccordion(){
+    toggleAccordion() {
         let pannello = document.querySelectorAll('.panel');
         for (let index = 0; index < pannello.length; index++) {
             const element = pannello[index];
-            if(element.style.display == 'none'){
+            if (element.style.display == 'none') {
                 element.style.display = 'block'
-            }else{
+            } else {
                 element.style.display = 'none'
             }
-            
-            
+
+
         }
     }
     findAthlete(fin) {
@@ -69,10 +69,10 @@ class Atleti extends React.Component {
                         <div onClick={this.toggleAccordion.bind(this)} className={atletiStyle.accordion}>Tutti i record</div>
                         <table class="panel" style={{ display: "none" }}>
                             <tr><th>Battery</th><th>Tempo</th></tr>
-                            {record} 
+                            {record}
                         </table>
-                        </>,
-                        showLoader: false
+                    </>,
+                    showLoader: false
                 })
             })
             .catch((error) => {
@@ -111,7 +111,7 @@ class Atleti extends React.Component {
 
                     <div className={atletiStyle.modalContent}>
                         <span className={atletiStyle.close} onClick={this.closeModal.bind(this)}>&times;</span>
-                        <div className={atletiStyle.loader} style={{ display: this.state.showLoader ? 'block' : 'none'}}></div>
+                        <div className={atletiStyle.loader} style={{ display: this.state.showLoader ? 'block' : 'none' }}></div>
                         {this.state.html}
                     </div>
 
